@@ -9,7 +9,7 @@ public class Main extends JFrame{
 	private static final int HEIGHT=600;
 	
 	public Main () {
-		super("Find Linnea");
+		super("Find Linnea!!!!!!!!!");
 		setSize(WIDTH, HEIGHT);
 		Game play = new Game();
 		((Component) play).setFocusable(true);
