@@ -1,14 +1,16 @@
-package endofyear;
+	package endofyear;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.event.*;
+	import javax.swing.*;
+	import java.awt.*;
+	import java.awt.event.*;
+	import java.awt.image.BufferedImage;
+	import java.util.*;
 
 	public class Game extends JPanel implements Runnable,KeyListener{
 		private static final Image ImageIcon = null;
 		private BufferedImage back;
 		private int key;
+		private ArrayList<Pictures>imageList;
 
 		
 		public Game() {
@@ -16,7 +18,17 @@ import java.awt.event.*;
 			new Thread(this).start();
 			this.addKeyListener(this);
 			key=-1;
-		}
+			imageList=new ArrayList<Pictures>();
+			createimagelist();
+			}
+		
+	public void createimagelist() {
+        imageList.add(new Pictures("s1.png",300,400,1,1,100,100,false,true));
+        imageList.add(new Pictures("s2.png",100,590,1,1,100,100,true,true));
+        imageList.add(new Pictures("s3.png",600,300,1,1,200,200,false,false));
+        imageList.add(new Pictures("s4.png",700,10,1,1,100,100,true,false));
+        imageList.add(new Pictures("s5.png",20,80,1,1,80,120,false,true));
+	}
 
 		public void run() {
 			try {
@@ -46,20 +58,38 @@ import java.awt.event.*;
 			
 			//START CODING GRAPHICS HERE 
 
-		
+			g2d.setColor(Color.CYAN);
+			
+			displayimages(g2d);
+			move();
 			
 			//This line tells the program to draw everything above. If you delete this, nothing will show up.
-			twoDgraph.drawImage(back, 0, 0, null);}
+			twoDgraph.drawImage(back, 0, 0, null);} {
 			// TODO Auto-generated method stub
 							
-	
+			}
+		public void displayimages(Graphics g2d) {
+			for(Pictures b:imageList) {
+				g2d.drawImage(new ImageIcon(b.getPic()).getImage(),b.getX(),b.getY(), b.getwidth(), b.getheight(), this);
+			}
+
+		}
 
 		
-		
+			public void move() {
+				for(Pictures b:imageList){
+				b.bounce();	
+				}
+			}
 			
 	public void keyPressed(KeyEvent e) {}
 	
-	public void keyTyped(KeyEvent e) { }
+	public void keyTyped(KeyEvent e) {
+		
+		key=e.getKeyCode();
+		System.out.println(key);
+		if(key==32);
+	}
 
 	public void keyReleased(KeyEvent e) {}
 
