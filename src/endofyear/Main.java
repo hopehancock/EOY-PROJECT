@@ -9,7 +9,7 @@ public class Main extends JFrame{
 	private static final int HEIGHT=600;
 	
 	public Main () {
-		super("AP Array List");
+		super("Find Linnea");
 		setSize(WIDTH, HEIGHT);
 		Game play = new Game();
 		((Component) play).setFocusable(true);
@@ -20,6 +20,7 @@ public class Main extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	} 
+	
 	
 	
 	public static void main(String[] args) {
