@@ -49,6 +49,7 @@
 				back =(BufferedImage) (createImage(getWidth(), getHeight()));
 					}
 
+		//test for oushing to git
 		//create a graphics reference to the back ground image
 		//we will draw all changes on the background image
 			Graphics g2d = back.createGraphics();
