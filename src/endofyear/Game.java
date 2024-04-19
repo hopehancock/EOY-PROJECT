@@ -10,6 +10,7 @@
 		private static final Image ImageIcon = null;
 		private BufferedImage back;
 		private int key;
+		   private ImageIcon background;
 		private ArrayList<Pictures>imageList;
 
 		
@@ -17,6 +18,7 @@
 			back=null;
 			new Thread(this).start();
 			this.addKeyListener(this);
+			 background = new ImageIcon("ginger.jpg");
 			key=-1;
 			imageList=new ArrayList<Pictures>();
 			createimagelist();
