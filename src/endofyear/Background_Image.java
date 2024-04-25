@@ -7,7 +7,7 @@ public Background_Image() {
 
 background="oranges.png";
 
-}
+}     
 
 public String getBackground() {
 
