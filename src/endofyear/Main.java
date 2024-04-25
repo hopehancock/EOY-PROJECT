@@ -15,7 +15,7 @@ public class Main extends JFrame{
 		((Component) play).setFocusable(true);
 		setBackground(Color.WHITE);
 		getContentPane().add(play);
-		 
+		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

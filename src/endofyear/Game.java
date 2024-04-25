@@ -10,7 +10,8 @@
 		private static final Image ImageIcon = null;
 		private BufferedImage back;
 		private int key;
-		   private ImageIcon background;
+		private Background_Image bi;
+        private ImageIcon background;
 		private ArrayList<Pictures>imageList;
 
 		
@@ -18,7 +19,10 @@
 			back=null;
 			new Thread(this).start();
 			this.addKeyListener(this);
-			 background = new ImageIcon("ginger.jpg");
+			bi=new Background_Image();
+			background=new ImageIcon(bi.getBackground());
+
+			 //background = new ImageIcon("ginger.jpg");
 			key=-1;
 			imageList=new ArrayList<Pictures>();
 			createimagelist();
@@ -60,6 +64,7 @@
 			g2d.clearRect(0, 0, getSize().width, getSize().height); 
 			
 			//START CODING GRAPHICS HERE 
+			g2d.drawImage(background.getImage(), 0, 0, getWidth(),getHeight(),this);
 
 			g2d.setColor(Color.CYAN);
 			
