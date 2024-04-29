@@ -90,6 +90,7 @@ public class Game extends JPanel implements Runnable, KeyListener {
         System.out.println(key);
         if (key == 32) ;
     }
+    
 
     public void keyReleased(KeyEvent e) {
     }
